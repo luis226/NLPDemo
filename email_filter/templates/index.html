@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+    <h2>Email Spam Detection model</h2>
+    <p>This is a spam detection prototype made for personal practice and for unosquare's meetup of 18 of december of 2018</p>
+
+    <form action="{% url 'email_filter:index' %}" method="post">
+        {% csrf_token %}
+        <label for="email-content">Paste here your email's content:</label>
+        <br/>
+        <textarea name="email-content" rows="20" style="resize:none;" cols="100" id="email-content"></textarea>
+        <br/>
+        <input type="submit" value="Submit">
+
+    </form>
+    {% if spam %}
+        <div>For your message:</div>
+        <div>{{message}}</div>
+        <h4>The model concluded that is {{spam}}% that it is spam</h4>
+        <h4>The model concluded that is {{not_spam}}% that it is not spam</h4>
+    {% endif %}
+{% endblock %}
