@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block 'content' %}
+
     <h2>Email Spam Detection model</h2>
     <p>This is a spam detection prototype made for personal practice and for unosquare's meetup of 18 of december of 2018</p>
 
@@ -13,9 +14,18 @@
 
     </form>
     {% if spam %}
+        <h2>Results</h2>
         <div>For your message:</div>
         <div>{{message}}</div>
         <h4>The model concluded that is {{spam}}% that it is spam</h4>
         <h4>The model concluded that is {{not_spam}}% that it is not spam</h4>
     {% endif %}
+
+    <iframe
+        allow="microphone;"
+        width="350"
+        height="430"
+        src="https://console.dialogflow.com/api-client/demo/embedded/e84677d8-cc78-4e60-88af-bd17271ee16b">
+    </iframe>
+
 {% endblock %}

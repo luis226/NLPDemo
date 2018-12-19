@@ -131,3 +131,4 @@ USE_TZ = True
 STATIC_URL = 'https://storage.googleapis.com/galaviz/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+
